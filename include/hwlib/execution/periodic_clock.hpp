@@ -3,7 +3,7 @@
 #include <chrono>
 #include <functional>
 
-namespace integra
+namespace hwlib::execution
 {
 
 /// Time and tick source abstraction. Isolates the only two real-hardware
@@ -25,4 +25,4 @@ public:
     virtual void StopTick() = 0;
 };
 
-} // namespace integra
+} // namespace hwlib::execution

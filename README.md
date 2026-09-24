@@ -2,23 +2,23 @@
 
 Interface for a monotonic clock and a periodic tick, so the code above it stays host-testable.
 
-Part of [integra-lib](https://github.com/integra-lib) — architecture-independent C++20
+Part of [hwlib](https://github.com/integra-lib) — architecture-independent C++20
 components shared between firmware projects. Header-only,
 no exceptions, no RTTI.
 
 ## Use it
 
 ```bash
-git submodule add git@github.com:integra-lib/periodic-clock.git external/integra/periodic-clock
+git submodule add git@github.com:integra-lib/periodic-clock.git external/hwlib/periodic-clock
 ```
 
 ```cmake
-add_subdirectory(external/integra/periodic-clock)
-target_link_libraries(app PRIVATE Integra::periodic_clock)
+add_subdirectory(external/hwlib/periodic-clock)
+target_link_libraries(app PRIVATE Hwlib::periodic_clock)
 ```
 
 ```cpp
-#include <integra/periodic_clock.hpp>
+#include <hwlib/execution/periodic_clock.hpp>
 ```
 
 Each component carries its own include directory, so this header stays unreachable
@@ -31,9 +31,9 @@ Every component is released on its own, tagged `vX.Y.Z`. Pre-1.0, a minor releas
 break the API, which is why dependants accept a single minor.
 
 ```bash
-git -C external/integra/periodic-clock fetch --tags
-git -C external/integra/periodic-clock checkout v0.2.0
-git add external/integra/periodic-clock && git commit -m "build: bump periodic-clock to v0.2.0"
+git -C external/hwlib/periodic-clock fetch --tags
+git -C external/hwlib/periodic-clock checkout v0.2.0
+git add external/hwlib/periodic-clock && git commit -m "build: bump periodic-clock to v0.2.0"
 ```
 
 ## In a consumer's CI
